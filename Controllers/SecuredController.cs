@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JWT.Authentication.WebAPI.Controllers
@@ -10,13 +9,13 @@ namespace JWT.Authentication.WebAPI.Controllers
     public class SecuredController : ControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> GetSecuredData()
+        public IActionResult GetSecuredData()
         {
             return Ok("This Secured Data is available only for Authenticated Users.");
         }
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> PostSecuredData()
+        public IActionResult PostSecuredData()
         {
             return Ok("This Secured Data is available only for Administrators.");
         }

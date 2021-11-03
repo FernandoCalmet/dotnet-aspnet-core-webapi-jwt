@@ -17,14 +17,15 @@ namespace JWT.Authentication.WebAPI.Controllers
         {
             _userService = userService;
         }
+
         [HttpPost("register")]
         //[ApiExplorerSettings(IgnoreApi = true)]
         public async Task<ActionResult> RegisterAsync(RegisterModel model)
         {
-
             var result = await _userService.RegisterAsync(model);
             return Ok(result);
         }
+
         [HttpPost("token")]
         public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
         {
@@ -32,12 +33,14 @@ namespace JWT.Authentication.WebAPI.Controllers
             SetRefreshTokenInCookie(result.RefreshToken);
             return Ok(result);
         }
+
         [HttpPost("addrole")]
         public async Task<IActionResult> AddRoleAsync(AddRoleModel model)
         {
             var result = await _userService.AddRoleAsync(model);
             return Ok(result);
         }
+
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken()
         {
@@ -47,8 +50,9 @@ namespace JWT.Authentication.WebAPI.Controllers
                 SetRefreshTokenInCookie(response.RefreshToken);
             return Ok(response);
         }
+
         [HttpPost("revoke-token")]
-        public async Task<IActionResult> RevokeToken([FromBody] RevokeTokenRequest model)
+        public IActionResult RevokeToken([FromBody] RevokeTokenRequest model)
         {
             // accept token from request body or cookie
             var token = model.Token ?? Request.Cookies["refreshToken"];
@@ -63,6 +67,7 @@ namespace JWT.Authentication.WebAPI.Controllers
 
             return Ok(new { message = "Token revoked" });
         }
+
         private void SetRefreshTokenInCookie(string refreshToken)
         {
             var cookieOptions = new CookieOptions
@@ -72,6 +77,7 @@ namespace JWT.Authentication.WebAPI.Controllers
             };
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
         }
+
         [Authorize]
         [HttpPost("tokens/{id}")]
         public IActionResult GetRefreshTokens(string id)
