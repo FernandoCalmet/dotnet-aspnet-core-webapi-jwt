@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PP6V/ahI1FGXvrtthKZpL/UzcO8kLwpl/Kon3d9mz4zi7j8nwdgS8teY28+bB6FTU8TXznAHKDf+uA4T50LZ/w==",
+  "dgSpecHash": "s/2gJmAtFCwue7kOVNSmEHObKSdA8bQaVHBsb42+j8X7PBvQXOnWaho7zX2nIcnvxDdImYIxZK3r5NC16EhygA==",
   "success": true,
   "projectFilePath": "D:\\Github\\FernandoCalmet\\CS-ASPNET-Core-API-JWT\\JWT.Authentication.WebAPI.csproj",
   "expectedPackageFiles": [
