@@ -21,7 +21,7 @@ Este proyecto es una muestra de una aplicación API con seguridad de JWT. Se uti
 Clonar el repositorio.
 
 ```bash
-gh repo clone FernandoCalmet/DOTNET-5-ASPNET-Core-API-JWT
+gh repo clone FernandoCalmet/dotnet-5-aspnet-core-api-jwt
 ```
 
 Crear la migración de base de datos
