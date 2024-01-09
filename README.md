@@ -1,4 +1,4 @@
-# 🦄 C# ASP.NET Core API with JWT
+# 🦄 C# ASP.NET Core Web API with JWT
 
 [![Github][github-shield]][github-url]
 [![Kofi][kofi-shield]][kofi-url]
@@ -12,7 +12,7 @@ This project is a demonstration of JWT security using ASP.NET Core Web API with 
 Clone the repository.
 
 ```bash
-gh repo clone FernandoCalmet/dotnet-aspnet-core-api-jwt
+gh repo clone FernandoCalmet/dotnet-aspnet-core-webapi-jwt
 ```
 
 Data migration:
